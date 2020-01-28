@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Список</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Пол</th>
+        <th>Дата рождения</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let person of persons | async">
+        <td>{{person.lastName}}</td>
+        <td>{{person.firstName}}</td>
+        <td>{{person.midName}}</td>
+        <td>{{person.sex}}</td>
+        <td>{{person.birthday}}</td>
+        <td><button (click)="deletePerson(person.id)" class="btn btn-danger">Удалить</button>
+          <button (click)="personDetails(person.id)" class="btn btn-info" style="margin-left: 10px">Детали</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

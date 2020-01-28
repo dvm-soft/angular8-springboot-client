@@ -1,0 +1,24 @@
+<h2>Детали</h2>
+
+<hr/>
+<div *ngIf="person">
+  <div>
+    <label><b>Фамилия: </b></label> {{person.lastName}}
+  </div>
+  <div>
+    <label><b>Имя: </b></label> {{person.firstName}}
+  </div>
+  <div>
+    <label><b>Отчество: </b></label> {{person.lastName}}
+  </div>
+  <div>
+    <label><b>Пол: </b></label> {{person.sex}}
+  </div>
+  <div>
+    <label><b>Дата рождения: </b></label> {{person.birthday}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Назад к списку</button><br>
