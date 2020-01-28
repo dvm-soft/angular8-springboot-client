@@ -4,5 +4,6 @@ export class Person {
   midName: string;
   lastName: string;
   birthday: Date;
-  sex: boolean;
+  gender: boolean;
 }
+

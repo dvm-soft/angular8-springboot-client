@@ -9,13 +9,24 @@
     <label><b>Имя: </b></label> {{person.firstName}}
   </div>
   <div>
-    <label><b>Отчество: </b></label> {{person.lastName}}
+    <label><b>Отчество: </b></label> {{person.midName}}
   </div>
   <div>
-    <label><b>Пол: </b></label> {{person.sex}}
+    <p *ngIf="person.gender;else unset">
+    <label><b>Пол: </b></label> Мужской
+    </p>
+    <ng-template #unset>
+      <label><b>Пол: </b></label> Женский
+    </ng-template>
   </div>
+
+<!--
+  <div >
+    <label><b>Пол: </b></label> {{person.gender}}
+  </div>
+-->
   <div>
-    <label><b>Дата рождения: </b></label> {{person.birthday}}
+    <label><b>Дата рождения: </b></label> {{person.birthday | date: "dd.MM.yyyy"}}
   </div>
 </div>
 

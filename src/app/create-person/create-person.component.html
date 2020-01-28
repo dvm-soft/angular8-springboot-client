@@ -18,7 +18,10 @@
 
     <div class="form-group">
       <label for="name">Пол</label>
-      <input type="checkboxdate" class="form-control" id="sex" required [(ngModel)]="person.sex" name="sex">
+      <select size="1" class="form-control" id="gender" required [(ngModel)]="person.gender" name="gender">
+        <option value="false">Женский</option>
+        <option value="true">Мужской</option>
+      </select>
     </div>
 
     <div class="form-group">
@@ -26,7 +29,7 @@
       <input type="date" class="form-control" id="birthday" required [(ngModel)]="person.birthday" name="birthday">
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">Сохранить</button>
   </form>
 </div>
 

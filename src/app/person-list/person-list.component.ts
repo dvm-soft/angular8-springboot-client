@@ -33,6 +33,10 @@ export class PersonListComponent implements OnInit {
         error => console.log(error));
   }
 
+  updatePerson(id: number) {
+    this.router.navigate(['update', id]);
+  }
+
   personDetails(id: number) {
     this.router.navigate(['details', id]);
   }

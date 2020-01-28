@@ -18,9 +18,18 @@
         <td>{{person.lastName}}</td>
         <td>{{person.firstName}}</td>
         <td>{{person.midName}}</td>
-        <td>{{person.sex}}</td>
-        <td>{{person.birthday}}</td>
-        <td><button (click)="deletePerson(person.id)" class="btn btn-danger">Удалить</button>
+        <td>
+          <p *ngIf="person.gender;else unset">
+            Мужской
+          </p>
+          <ng-template #unset>
+            Женский
+          </ng-template>
+        </td>
+        <td>{{person.birthday| date: "dd.MM.yyyy"}}</td>
+        <td>
+          <button (click)="deletePerson(person.id)" class="btn btn-danger">Удалить</button>
+          <button (click)="updatePerson(person.id)" class="btn btn-info" style="margin-left: 10px">Изменить</button>
           <button (click)="personDetails(person.id)" class="btn btn-info" style="margin-left: 10px">Детали</button>
         </td>
       </tr>

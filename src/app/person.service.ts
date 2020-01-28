@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -14,18 +14,12 @@ export class PersonService {
   }
 
   getPerson(id: number): Observable<any> {
-/*
-    const header = {
-      headers: new HttpHeaders()
-        .set('Access-Control-Allow-Origin')
-    }
-*/
     return this.http.get(`${this.baseUrl}/person/${id}`);
   }
 
   // tslint:disable-next-line:ban-types
   createPerson(person: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, person);
+    return this.http.post(`${this.baseUrl}/person`, person);
   }
 
   // tslint:disable-next-line:ban-types
@@ -38,9 +32,5 @@ export class PersonService {
   }
 
   getPersonsList(): Observable<any> {
-
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-    const options = { headers, crossDomain: true, withCredentials: true };
-
-    return this.http.get(`${this.baseUrl}/persons`, options) ;
+    return this.http.get(`${this.baseUrl}/persons`) ;
   }}
